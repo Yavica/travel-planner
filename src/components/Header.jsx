@@ -1,24 +1,16 @@
-import { Link } from "react-router-dom";
-
 export default function Header() {
   return (
     <header className="bg-blue-600 text-white shadow-md">
-      <div className="container mx-auto flex justify-between items-center p-4">
-        {/* Logo / App Name */}
-        <h1 className="text-xl font-bold">Travel Planner</h1>
+      <div className="container mx-auto flex flex-col items-center p-4">
+        <h1 className="text-xl font-bold">Vista Voyage</h1>
 
-        {/* Navigation Links */}
-        <nav className="space-x-4">
-          <Link to="/" className="hover:underline">
-            Home
-          </Link>
-          <Link to="/attractions" className="hover:underline">
-            Attractions
-          </Link>
-          <Link to="/itinerary" className="hover:underline">
-            Itinerary
-          </Link>
+        <nav className="space-x-4 mt-2">
+          <a href="#">Home</a>
+          <a href="#">Attractions</a>
+          <a href="#">Itinerary</a>
         </nav>
+
+        <hr className="w-full border-t border-blue-400 mt-2" />
       </div>
     </header>
   );
