@@ -2,29 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Global Styles */
+/* Basic reset */
 html, body, #root {
   height: 100%;
   margin: 0;
   padding: 0;
   font-family: 'Inter', sans-serif;
   background-color: #f9fafb; /* light gray background */
-  color: #111827; /* neutral text */
+  color: #111827; /* dark text */
 }
 
-/* Scrollbar styling */
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-track {
-  background: #f3f4f6;
-}
-::-webkit-scrollbar-thumb {
-  background-color: #9ca3af;
-  border-radius: 9999px;
-}
-
-/* Utility overrides or custom components */
+/* Optional: custom container */
 .container {
   @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
 }

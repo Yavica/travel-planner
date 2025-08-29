@@ -26,16 +26,19 @@ export default function Attractions({ onSave }) {
 
   return (
     <div className="p-6">
-      <h1 className="text-2xl font-bold mb-4">Attractions</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <h1 className="text-2xl font-bold mb-6">Attractions</h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {attractions.map((item) => (
-          <div key={item.id} className="border p-4 rounded-lg shadow">
-            <h2 className="text-xl font-semibold">{item.name}</h2>
-            <p className="text-gray-600">{item.description}</p>
-            <p className="text-sm text-gray-500">{item.location}</p>
+          <div
+            key={item.id}
+            className="bg-white rounded-lg shadow p-4 hover:shadow-md transition"
+          >
+            <h2 className="text-lg font-semibold">{item.name}</h2>
+            <p className="text-sm text-gray-600 mt-1">{item.description}</p>
+            <p className="text-xs text-gray-500">{item.location}</p>
             <button
               onClick={() => onSave(item)}
-              className="mt-2 px-3 py-1 bg-blue-600 text-white rounded hover:bg-blue-700"
+              className="mt-3 px-3 py-1 bg-blue-600 text-white text-sm rounded hover:bg-blue-700"
             >
               Save to Itinerary
             </button>

@@ -1,20 +1,23 @@
 export default function Itinerary({ savedItems }) {
   return (
     <div className="p-6">
-      <h1 className="text-2xl font-bold mb-4">My Itinerary</h1>
+      <h1 className="text-2xl font-bold mb-6 text-center">My Itinerary</h1>
 
       {savedItems.length === 0 ? (
-        <p className="text-gray-500">No items saved yet.</p>
+        <p className="text-gray-500 text-center">No items saved yet.</p>
       ) : (
-        <ul className="space-y-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {savedItems.map((item, index) => (
-            <li key={index} className="border p-4 rounded-lg shadow">
-              <h2 className="text-lg font-semibold">{item.name}</h2>
-              <p className="text-gray-600">{item.description}</p>
-              <p className="text-sm text-gray-500">{item.location}</p>
-            </li>
+            <div
+              key={index}
+              className="bg-white border border-gray-200 rounded-xl shadow-md hover:shadow-lg transition p-5"
+            >
+              <h2 className="text-lg font-semibold text-blue-700">{item.name}</h2>
+              <p className="text-sm text-gray-600 mt-2">{item.description}</p>
+              <p className="text-xs text-gray-500 mt-1 italic">{item.location}</p>
+            </div>
           ))}
-        </ul>
+        </div>
       )}
     </div>
   );
