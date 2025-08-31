@@ -4,21 +4,26 @@ function Attractions({ addToItinerary }) {
   const [attractions, setAttractions] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // Fallback images in the same order as the attractions will be displayed
+  // Fallback images (make sure all exist in /public/images/)
   const fallbackImages = [
     "/images/Paris4.jpg",
     "/images/Paris3.jpg",
     "/images/Paris2.jpg",
+    "/images/Paris1.jpg",
+    "/images/London1.jpg",
+    "/images/Tokyo5.jpg",
+    "/images/Paris5.jpg",
+    "/images/Tokyo4.jpg",
   ];
 
   useEffect(() => {
     const fetchAttractions = async () => {
       try {
         const response = await fetch(
-          `https://api.geoapify.com/v2/places?categories=tourism.attraction&filter=circle:2.3522,48.8566,5000&limit=3&apiKey=${
+          `https://api.geoapify.com/v2/places?categories=tourism.attraction&filter=circle:2.3522,48.8566,5000&limit=10&apiKey=${
             import.meta.env.VITE_GEOAPIFY_API_KEY
           }`
-        );
+        ); // increased limit to 10
         const data = await response.json();
         setAttractions(data.features || []);
       } catch (error) {
@@ -46,7 +51,9 @@ function Attractions({ addToItinerary }) {
             const city = attraction.properties.city || "Unknown City";
             const desc =
               attraction.properties.formatted || "No description available.";
-            const image = fallbackImages[index % fallbackImages.length]; // rotate images if more attractions
+
+            // Use fallback images in rotation
+            const image = fallbackImages[index % fallbackImages.length];
 
             return (
               <div
