@@ -11,7 +11,7 @@ function Header() {
         to="/"
         className="text-2xl font-extrabold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent"
       >
-        kkkk
+        Vista Voyage
       </Link>
 
       {/* Nav Links */}
