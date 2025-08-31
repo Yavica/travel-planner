@@ -3,11 +3,11 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
 import Attractions from "./pages/Attractions";
 import Itinerary from "./pages/Itinerary.jsx";
-import LoginModal from "./components/LoginModal"; // 👈 import here
+import LoginModal from "./components/LoginModal"; 
 
 function App() {
   const [itinerary, setItinerary] = useState([]);
-  const [isLoginOpen, setIsLoginOpen] = useState(false); // 👈 modal state
+  const [isLoginOpen, setIsLoginOpen] = useState(false); 
 
   const addToItinerary = (item) => {
     setItinerary([...itinerary, item]);

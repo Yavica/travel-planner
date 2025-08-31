@@ -7,8 +7,11 @@ function Header() {
   return (
     <header className="flex justify-between items-center px-8 py-4 bg-black/50 backdrop-blur-md shadow-lg border-b border-white/10">
       {/* Logo */}
-      <Link to="/" className="text-2xl font-extrabold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-        Travel Planner
+      <Link
+        to="/"
+        className="text-2xl font-extrabold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent"
+      >
+        kkkk
       </Link>
 
       {/* Nav Links */}
@@ -30,7 +33,9 @@ function Header() {
       {showLogin && (
         <div className="fixed inset-0 flex items-center justify-center bg-black/70 backdrop-blur-md z-50">
           <div className="bg-gray-900 p-8 rounded-2xl shadow-2xl w-96 relative border border-white/20">
-            <h2 className="text-2xl font-bold text-cyan-400 mb-6">Login</h2>
+            <h2 className="text-2xl font-bold text-cyan-400 mb-6">
+              Welcome to Vista Voyage
+            </h2>
 
             <form className="space-y-4">
               <input
