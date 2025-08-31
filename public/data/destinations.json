@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "Nairobi",
+    "description": "Vibrant city with wildlife at your doorstep.",
+    "image": "/images/Nairobi1.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Paris",
+    "description": "The city of lights, romance, and art.",
+    "image": "/images/Paris1.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Tokyo",
+    "description": "A futuristic city blending tradition with tech.",
+    "image": "/images/Tokyo1.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Kyoto",
+    "description": "Temples, gardens, and the beauty of old Japan.",
+    "image": "/images/Tokyo2.jpg"
+  },
+  {
+    "id": 5,
+    "name": "London",
+    "description": "Historic landmarks and modern culture.",
+    "image": "/images/London1.jpg"
+  },
+  {
+    "id": 6,
+    "name": "New York",
+    "description": "The city that never sleeps, full of energy.",
+    "image": "/images/NewYork1.jpg"
+  }
+]

@@ -1,17 +1,39 @@
-export default function Header() {
+import { NavLink } from "react-router-dom";
+
+function Header() {
   return (
-    <header className="bg-blue-600 text-white shadow-md">
-      <div className="container mx-auto flex flex-col items-center p-4">
-        <h1 className="text-xl font-bold">Vista Voyage</h1>
-
-        <nav className="space-x-4 mt-2">
-          <a href="#">Home</a>
-          <a href="#">Attractions</a>
-          <a href="#">Itinerary</a>
+    <header className="bg-white shadow-md">
+      <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+        <h1 className="text-xl font-bold text-blue-600">VistaVoyage</h1>
+        <nav className="space-x-6">
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              isActive ? "text-blue-600 font-semibold" : "text-gray-700"
+            }
+          >
+            Home
+          </NavLink>
+          <NavLink
+            to="/attractions"
+            className={({ isActive }) =>
+              isActive ? "text-blue-600 font-semibold" : "text-gray-700"
+            }
+          >
+            Attractions
+          </NavLink>
+          <NavLink
+            to="/itinerary"
+            className={({ isActive }) =>
+              isActive ? "text-blue-600 font-semibold" : "text-gray-700"
+            }
+          >
+            Itinerary
+          </NavLink>
         </nav>
-
-        <hr className="w-full border-t border-blue-400 mt-2" />
       </div>
     </header>
   );
 }
+
+export default Header;
