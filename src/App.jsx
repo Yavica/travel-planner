@@ -1,28 +1,60 @@
-import { useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Header from "./components/Header";
+import React, { useState } from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
 import Attractions from "./pages/Attractions";
 import Itinerary from "./pages/Itinerary.jsx";
+import LoginModal from "./components/LoginModal"; // 👈 import here
 
 function App() {
   const [itinerary, setItinerary] = useState([]);
+  const [isLoginOpen, setIsLoginOpen] = useState(false); // 👈 modal state
 
-  // ✅ Add to itinerary (with full details, not just name)
   const addToItinerary = (item) => {
-    setItinerary((prev) => [...prev, item]);
+    setItinerary([...itinerary, item]);
   };
 
-  // ✅ Remove from itinerary
   const removeFromItinerary = (index) => {
-    setItinerary((prev) => prev.filter((_, i) => i !== index));
+    setItinerary(itinerary.filter((_, i) => i !== index));
+  };
+
+  const handleLogin = (email, password) => {
+    console.log("Logging in with:", email, password);
+    setIsLoginOpen(false); // close after login
   };
 
   return (
     <Router>
-      <div className="min-h-screen flex flex-col bg-gradient-to-br from-gray-900 via-black to-gray-800 text-gray-100">
-        <Header />
-        <main className="flex-grow container mx-auto px-6 py-10">
+      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-gray-800 text-white">
+        {/* Navbar */}
+        <nav className="flex justify-between items-center p-6 shadow-md">
+          <Link
+            to="/"
+            className="text-2xl font-bold text-cyan-400 hover:text-cyan-300"
+          >
+            Travel Planner
+          </Link>
+
+          <div className="space-x-6 flex items-center">
+            <Link to="/" className="hover:text-cyan-300">
+              Home
+            </Link>
+            <Link to="/attractions" className="hover:text-cyan-300">
+              Attractions
+            </Link>
+            <Link to="/itinerary" className="hover:text-cyan-300">
+              Itinerary
+            </Link>
+            <button
+              onClick={() => setIsLoginOpen(true)} // 👈 open modal
+              className="px-4 py-2 rounded-lg bg-cyan-500 hover:bg-cyan-600 transition"
+            >
+              Login
+            </button>
+          </div>
+        </nav>
+
+        {/* Pages */}
+        <div className="p-6">
           <Routes>
             <Route
               path="/"
@@ -42,7 +74,14 @@ function App() {
               }
             />
           </Routes>
-        </main>
+        </div>
+
+        {/* 👇 Login Modal */}
+        <LoginModal
+          isOpen={isLoginOpen}
+          onClose={() => setIsLoginOpen(false)}
+          onLogin={handleLogin}
+        />
       </div>
     </Router>
   );
